@@ -1,8 +1,10 @@
-package models;
+package dtos;
+
+import models.*;
 
 import java.util.List;
 
-public class Universidade {
+public class UniversidadeDTO {
     private Integer idUniversidade;
     private String desUniversidade;
 
@@ -12,7 +14,7 @@ public class Universidade {
     private List<Curriculo> curriculos;
     private List<Aluno> alunos;
 
-    public Universidade(Integer idUniversidade, String desUniversidade, List<MatriculaDisciplina> matriculaDisciplinas, List<MatriculaCurriculo> matriculaCursos, List<Curso> cursos, List<Curriculo> curriculos, List<Aluno> alunos) {
+    public UniversidadeDTO(Integer idUniversidade, String desUniversidade, List<MatriculaDisciplina> matriculaDisciplinas, List<MatriculaCurriculo> matriculaCursos, List<Curso> cursos, List<Curriculo> curriculos, List<Aluno> alunos) {
         this.idUniversidade = idUniversidade;
         this.desUniversidade = desUniversidade;
         this.matriculaDisciplinas = matriculaDisciplinas;
@@ -22,12 +24,12 @@ public class Universidade {
         this.alunos = alunos;
     }
 
-    public Universidade(Integer idUniversidade, String desUniversidade) {
+    public UniversidadeDTO(Integer idUniversidade, String desUniversidade) {
         this.idUniversidade = idUniversidade;
         this.desUniversidade = desUniversidade;
     }
 
-    public Universidade() {
+    public UniversidadeDTO() {
         // Empty
     }
 

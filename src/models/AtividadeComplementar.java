@@ -3,10 +3,12 @@ package models;
 public class AtividadeComplementar {
     private Integer codAtividade;
     private String desAtividade;
+    private Float qtdHoras;
 
-    public AtividadeComplementar(Integer codAtividade, String desAtividade) {
+    public AtividadeComplementar(Integer codAtividade, String desAtividade, Float qtdHoras) {
         this.codAtividade = codAtividade;
         this.desAtividade = desAtividade;
+        this.qtdHoras = qtdHoras;
     }
 
     public Integer getCodAtividade() {
@@ -25,11 +27,20 @@ public class AtividadeComplementar {
         this.desAtividade = desAtividade;
     }
 
+    public Float getQtdHoras() {
+        return qtdHoras;
+    }
+
+    public void setQtdHoras(Float qtdHoras) {
+        this.qtdHoras = qtdHoras;
+    }
+
     @Override
     public String toString() {
         return "AtividadeComplementar{" +
                 "codAtividade=" + codAtividade +
                 ", desAtividade='" + desAtividade + '\'' +
+                ", qtdHoras=" + qtdHoras +
                 '}';
     }
 }

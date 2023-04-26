@@ -46,7 +46,6 @@ public class Aluno {
         return "Aluno{" +
                 "codAluno=" + codAluno +
                 ", desNome='" + desNome + '\'' +
-                ", atividadeComplementares=" + atividadeComplementares +
                 '}';
     }
 }

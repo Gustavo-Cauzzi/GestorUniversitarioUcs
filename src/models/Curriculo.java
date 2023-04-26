@@ -42,7 +42,6 @@ public class Curriculo {
         return "Curriculo{" +
                 "codCurriculo=" + codCurriculo +
                 ", desCurriculo='" + desCurriculo + '\'' +
-                ", lstDisciplinas=" + lstDisciplinas +
                 '}';
     }
 }

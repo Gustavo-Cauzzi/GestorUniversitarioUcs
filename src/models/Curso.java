@@ -1,21 +1,34 @@
 package models;
 
+import java.util.Arrays;
+import java.util.Optional;
+
 public class Curso {
     public enum TIP_CURSO {
-        GRADUACAO(1),
-        POS(2),
-        MESTRADO(3),
-        EXTENSAO(4),
-        TECNOLOGO(5);
+        GRADUACAO(1, "Graduação"),
+        POS(2, "Pós"),
+        MESTRADO(3, "Mestrado"),
+        EXTENSAO(4, "Extensão"),
+        TECNOLOGO(5, "Tecnólogo");
 
         private final Integer id;
+        private final String nome;
 
-        TIP_CURSO(Integer id) {
+        TIP_CURSO(Integer id, String nome) {
             this.id = id;
+            this.nome = nome;
         }
 
         public Integer getId() {
             return id;
+        }
+
+        public String getNome() {
+            return nome;
+        }
+
+        public static Optional<TIP_CURSO> of(int t) {
+            return Arrays.stream(TIP_CURSO.values()).filter(o -> o.id.equals(t)).findFirst();
         }
     }
 
@@ -58,7 +71,7 @@ public class Curso {
         return "Curso{" +
                 "codCurso=" + codCurso +
                 ", desCurso='" + desCurso + '\'' +
-                ", tioCurso=" + tioCurso +
+                ", tioCurso=" + tioCurso.getNome() +
                 '}';
     }
 }

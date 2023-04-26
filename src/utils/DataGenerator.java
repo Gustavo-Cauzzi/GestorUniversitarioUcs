@@ -3,6 +3,7 @@ package utils;
 import models.Aluno;
 import models.Disciplina;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -25,6 +26,7 @@ public class DataGenerator {
             Aluno aluno = new Aluno();
             aluno.setCodAluno(id);
             aluno.setDesNome(DataGenerator.getRandomOf(nomes));
+            aluno.setAtividadeComplementares(Collections.emptyList());
             return aluno;
         }).toList();
     }
