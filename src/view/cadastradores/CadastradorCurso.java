@@ -1,6 +1,5 @@
-package cadastradores;
+package view.cadastradores;
 
-import models.Curriculo;
 import models.Curso;
 import repository.AppRepository;
 import utils.Utils;
@@ -24,13 +23,13 @@ public class CadastradorCurso extends Cadastrador<Curso> {
         int codigo = Utils.findNextCodigo(AppRepository.getInstance().getCursos(), Curso::getCodCurso);
         System.out.println("Nome do curso: ");
         String nome = sc.next();
-        Optional<Curso.TIP_CURSO> tipoDoCurso = Optional.empty();
+        Optional<Curso.TIP_CURSO> tipoDoCurso;
         do {
             System.out.println("Tipo de curso: ");
-            Arrays.stream(Curso.TIP_CURSO.values()).forEach(tipCurso -> System.out.printf("%d - %s", tipCurso.getId(), tipCurso.getNome()));
+            Arrays.stream(Curso.TIP_CURSO.values()).forEach(tipCurso -> System.out.printf("%d - %s%n", tipCurso.getId(), tipCurso.getNome()));
             tipoDoCurso = Curso.TIP_CURSO.of(sc.nextInt());
             if (tipoDoCurso.isEmpty()) System.out.println("Opção inválida");
-        } while (tipoDoCurso.isPresent());
+        } while (tipoDoCurso.isEmpty());
 
         return new Curso(codigo, nome, tipoDoCurso.orElse(Curso.TIP_CURSO.GRADUACAO));
     }

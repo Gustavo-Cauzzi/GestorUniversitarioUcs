@@ -1,4 +1,4 @@
-package cadastradores;
+package view.cadastradores;
 
 import models.AtividadeComplementar;
 import repository.AppRepository;

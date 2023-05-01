@@ -1,4 +1,4 @@
-package cadastradores;
+package view.cadastradores;
 
 import models.Aluno;
 import repository.AppRepository;
